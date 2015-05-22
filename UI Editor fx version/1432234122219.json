@@ -1,0 +1,22 @@
+{
+	"button":{
+		"property":{
+			"pos_y":117.0,
+			"pos_x":110.0,
+			"width":227.0,
+			"type":"normal",
+			"height":61.0
+		},
+		"id":"btn_1"
+	},
+	"text":{
+		"property":{
+			"pos_y":303.0,
+			"pos_x":241.0,
+			"width":237.0,
+			"caption":"text",
+			"height":54.0
+		},
+		"id":"txt_2"
+	}
+}
