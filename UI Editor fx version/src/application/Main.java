@@ -51,6 +51,7 @@ public class Main extends Application {
 				
 			});
 			Scene scene = new Scene(root);
+			scene.getStylesheets().add("application/application.css");
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("UI Editor");
 			primaryStage.show();

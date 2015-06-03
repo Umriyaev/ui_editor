@@ -15,6 +15,8 @@ import application.core.ButtonComponent;
 import application.core.ButtonType;
 import application.core.ComponentType;
 import application.core.IComponent;
+import application.core.ImageComponent;
+import application.core.PanelComponent;
 import application.core.TextComponent;
 import application.core.utils.HelperMethods;
 
@@ -54,13 +56,17 @@ public class ProjectManager {
 				break;
 			}
 		}
-		
-		if(!buttons.isEmpty()){
-			project.put(HelperMethods.ConvertComponentTypeToString(ComponentType.BUTTON), buttons);
+
+		if (!buttons.isEmpty()) {
+			project.put(HelperMethods
+					.ConvertComponentTypeToString(ComponentType.BUTTON),
+					buttons);
 		}
-		
-		if(!texts.isEmpty()){
-			project.put(HelperMethods.ConvertComponentTypeToString(ComponentType.TEXTFIELD), texts);
+
+		if (!texts.isEmpty()) {
+			project.put(HelperMethods
+					.ConvertComponentTypeToString(ComponentType.TEXTFIELD),
+					texts);
 		}
 		File myFile = new File(projectName + ".json");
 		myFile.createNewFile();
@@ -103,8 +109,24 @@ public class ProjectManager {
 			result = textComponent;
 			break;
 		case IMAGE:
+			id = "img_" + (imageCount + 1);
+			imageCount++;
+			ImageComponent imageComponent = new ImageComponent(
+					(float) rectangle.getX(), (float) rectangle.getY(),
+					(float) rectangle.getWidth(),
+					(float) rectangle.getHeight(), id);
+			components.put(id, imageComponent);
+			result = imageComponent;
 			break;
 		case PANEL:
+			id = "pnl_" + (panelCount + 1);
+			panelCount++;
+			PanelComponent panelComponent = new PanelComponent(
+					(float) rectangle.getX(), (float) rectangle.getY(),
+					(float) rectangle.getWidth(),
+					(float) rectangle.getHeight(), id);
+			components.put(id,panelComponent);
+			result = panelComponent;			
 			break;
 		case TABLE:
 			break;

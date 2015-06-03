@@ -1,5 +1,6 @@
 package application.controllers;
 
+import java.awt.event.KeyEvent;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Date;
@@ -31,6 +32,8 @@ import application.managers.ProjectManager;
 public class MainWindowController implements Initializable {
 
 	final DragContext dragContext = new DragContext();
+	
+	Node copyItem = null;
 
 	Map<String, Node> components = new HashMap<String, Node>();
 
@@ -136,6 +139,13 @@ public class MainWindowController implements Initializable {
 
 			}
 		};
+		
+		//Canvas ctrl+v event
+		cnvInterfaceDrawing.setOnKeyPressed(e->{
+			
+		});
+		
+		
 
 		// TODO Auto-generated method stub
 		btnButton.setOnAction(buttonClickedEventHandler);
